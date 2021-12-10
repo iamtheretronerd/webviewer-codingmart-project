@@ -49,6 +49,19 @@ const SplashScreen = ( { route, navigation } ) => {
       const reload = () => webview.current.reload();
     
       let WebViewRef;
+
+      let jsCode = `
+        var cookie={};
+        document.cookie.split('; ').forEach(function(i){cookie[i.split('=')[0]]=i.split('=')[1]});
+        document.querySelector('#email').value=cookie['email'] || '';
+        document.querySelector('#password').value=cookie['password'] || '';
+        document.querySelector('#login button').onclick = function(){
+            document.cookie = 'email='+document.querySelector('#email').value;
+            document.cookie = 'password='+document.querySelector('#password').value;
+        };
+    `;
+
+
     return (
        
         <WebView
@@ -63,6 +76,8 @@ const SplashScreen = ( { route, navigation } ) => {
         renderLoading={LoadingIndicatorView}
         //Want to show the view or not
         startInLoadingState={true}
+        sharedCookiesEnabled={true}
+        injectedJavaScript={jsCode}
         renderError={() => <Error reload={reload} />}
       />
 
