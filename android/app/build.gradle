@@ -146,6 +146,12 @@ android {
         }
     }
     signingConfigs {
+        release {
+            storeFile file('your_key_name.keystore')
+            storePassword 'codingmart'
+            keyAlias 'your_key_alias'
+            keyPassword 'codingmart'
+            }
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
@@ -154,6 +160,9 @@ android {
         }
     }
     buildTypes {
+           release {
+            signingConfig signingConfigs.release
+            }
         debug {
             signingConfig signingConfigs.debug
             if (nativeArchitectures) {
