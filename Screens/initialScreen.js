@@ -4,10 +4,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DoubleTapToClose from './close';
 import PushNotification from "react-native-push-notification";
+import messaging from '@react-native-firebase/messaging';
 
 const initialScreen = ({navigation}) => {
 
     useEffect(async() => {
+        checkToken();
         createChannels();
         let webvalue = await AsyncStorage.getItem('key');  
         console.log(webvalue); 
@@ -31,6 +33,13 @@ const initialScreen = ({navigation}) => {
                 }
             )
         }
+
+        const checkToken = async () => {
+            const fcmToken = await messaging().getToken();
+            if (fcmToken) {
+               console.log("fcmToken: "+fcmToken);
+            } 
+           }
 
     return (
         <View>
