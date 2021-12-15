@@ -3,10 +3,12 @@ import { StyleSheet, Text, View,AsyncStorage, TouchableOpacity, Image } from 're
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DoubleTapToClose from './close';
+import PushNotification from "react-native-push-notification";
 
 const initialScreen = ({navigation}) => {
 
     useEffect(async() => {
+        createChannels();
         let webvalue = await AsyncStorage.getItem('key');  
         console.log(webvalue); 
         if(webvalue == null || webvalue == "null"){
@@ -20,6 +22,15 @@ const initialScreen = ({navigation}) => {
         
         // write your code here, it's like componentWillMount
         }, [])
+
+        const createChannels = () => {
+            PushNotification.createChannel(
+                {
+                    channelId: "factoryWorkx",
+                    channelName: "factoryWorkx"
+                }
+            )
+        }
 
     return (
         <View>

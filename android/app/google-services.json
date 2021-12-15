@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "263665306402",
-    "project_id": "optimum-harbor-328204",
-    "storage_bucket": "optimum-harbor-328204.appspot.com"
+    "project_number": "760604358192",
+    "firebase_url": "https://project-adds.firebaseio.com",
+    "project_id": "project-adds",
+    "storage_bucket": "project-adds.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:263665306402:android:aed76c19555e815ea5737b",
+        "mobilesdk_app_id": "1:760604358192:android:cfb4bc032aa5dd54681ff5",
         "android_client_info": {
           "package_name": "com.newapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "263665306402-0vger38u9t7rkdejp38enb2pf40hek5p.apps.googleusercontent.com",
+          "client_id": "760604358192-u5hfosqoqc2l1kh2ktj2ddv6jnhlje34.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC-Hc1YvOF0-K9L4eq40_ymhoSGut9NeQ4"
+          "current_key": "AIzaSyBTdH2fwHbc2SJlvgSDNOobBr_ZRWDi5cM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "263665306402-0vger38u9t7rkdejp38enb2pf40hek5p.apps.googleusercontent.com",
+              "client_id": "760604358192-u5hfosqoqc2l1kh2ktj2ddv6jnhlje34.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
