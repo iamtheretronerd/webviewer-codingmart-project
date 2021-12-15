@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "263665306402",
+    "project_id": "optimum-harbor-328204",
+    "storage_bucket": "optimum-harbor-328204.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263665306402:android:aed76c19555e815ea5737b",
+        "android_client_info": {
+          "package_name": "com.newapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263665306402-0vger38u9t7rkdejp38enb2pf40hek5p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-Hc1YvOF0-K9L4eq40_ymhoSGut9NeQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "263665306402-0vger38u9t7rkdejp38enb2pf40hek5p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
