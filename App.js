@@ -22,7 +22,7 @@ const App = () => {
   return (
     <NavigationContainer>
     <Stack.Navigator>
-       <Stack.Screen options={{headerShown: false}} name="init" component={initialScreen} />
+      <Stack.Screen options={{headerShown: false}} name="init" component={initialScreen} />
       <Stack.Screen options={{headerShown: false}} name="Settings" component={SettingsScreen} />
       <Stack.Screen options={{headerShown: false}} name="Main" component={MainScreen} />
       <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
