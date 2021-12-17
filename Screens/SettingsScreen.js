@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TextInput, Button,AsyncStorage, TouchableOpacit
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DoubleTapToClose from './close'
+import TestScreen from './TestScreen';
 const SettingsScreen = ({ navigation }) => {
     
     //GET INPUT VALUE
@@ -33,6 +34,7 @@ const SettingsScreen = ({ navigation }) => {
     return (
         <View>
              <DoubleTapToClose />
+             <TestScreen />
              
             <Text style={styles.title}>FactoryWorkx Install Settings</Text>
             <View style={{ flexDirection:"row"}}>
