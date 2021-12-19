@@ -8,7 +8,7 @@ import {
     statusCodes,
   } from '@react-native-google-signin/google-signin';
 
-const TestScreen = () => {
+const signinScreenButton = () => {
 
     useEffect(() => {
         GoogleSignin.configure({
@@ -69,6 +69,6 @@ const TestScreen = () => {
     )
 }
 
-export default TestScreen
+export default signinScreenButton
 
 const styles = StyleSheet.create({})
