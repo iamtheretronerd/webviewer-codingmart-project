@@ -226,7 +226,14 @@ const HomeScreen = ({navigation}) => {
               </TouchableOpacity>
               <TouchableOpacity style={styles.whistlist}>
                 <AntDesign name="hearto" size={15} />
-                <Text style={{color: 'black'}}>Move to Whistlist</Text>
+                <Text
+                  style={{
+                    color: 'black',
+                    marginBottom: '4%',
+                    paddingBottom: '2%',
+                  }}>
+                  Move to Whistlist
+                </Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -239,11 +246,11 @@ const HomeScreen = ({navigation}) => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  whistlist:{
+  whistlist: {
     flexDirection: 'row',
     borderTopWidth: 0.5,
     borderRightWidth: 0.5,
-    paddingTop:2,
+    paddingTop: 2,
     height: '25%',
     width: '48%',
     marginTop: '-6.5%',
