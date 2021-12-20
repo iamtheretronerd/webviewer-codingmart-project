@@ -2,6 +2,9 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import InAppReview from 'react-native-in-app-review';
+
 import MainScreen from './Screens/MainScreen';
 import SettingsScreen from './Screens/SettingsScreen';
 import initialScreen from './Screens/initialScreen';
@@ -11,6 +14,22 @@ import HomeScreen from './Screens/HomeScreen';
 import SettingsMenu from './Screens/SettingsMenu';
 import VoiceMenu from './Screens/VoiceMenu';
 
+InAppReview.isAvailable();
+InAppReview.RequestInAppReview()
+  .then((hasFlowFinishedSuccessfully) => {
+    console.log('InAppReview in android', hasFlowFinishedSuccessfully);
+    console.log(
+        'InAppReview in ios has launched successfully',
+        hasFlowFinishedSuccessfully,
+      );
+      if (hasFlowFinishedSuccessfully) {
+    }
+})
+.catch((error) => {
+    console.log(error);
+  });
+  
+  
 const Stack = createNativeStackNavigator();
 
 const App = () => {

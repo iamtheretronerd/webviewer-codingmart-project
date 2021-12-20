@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.ibits.react_native_in_app_review.AppReviewPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
@@ -11,9 +12,22 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import java.util.Arrays;
+//New
+import com.ibits.react_native_in_app_review.AppReviewPackage;
+import com.facebook.react.shell.MainReactPackage;
+//close
 
 public class MainApplication extends Application implements ReactApplication {
-
+//New
+protected List<ReactPackage> getPackages() {
+    return Arrays.asList(
+            new MainReactPackage(),
+            new AppReviewPackage()
+            
+    );
+}
+//Close
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {
         @Override

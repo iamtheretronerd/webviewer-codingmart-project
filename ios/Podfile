@@ -14,6 +14,8 @@ target 'newapp' do
 
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
 
+  pod 'react-native-in-app-review', :path => '../node_modules/react-native-in-app-review'
+
   target 'newappTests' do
     inherit! :complete
     # Pods for testing

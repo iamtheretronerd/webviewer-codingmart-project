@@ -198,6 +198,10 @@ android {
 }
 
 dependencies {
+     //New
+    implementation project(':react-native-in-app-review')
+     implementation 'com.google.android.play:core:1.10.2'
+     //Close
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
