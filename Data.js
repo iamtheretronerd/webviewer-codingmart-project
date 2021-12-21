@@ -9,6 +9,11 @@ const data = [
     name: 'Louis Philippe',
     description: 'Black Crew nect T-shirt',
   },
+  {
+    id: '3',
+    name: 'Louis Philippe',
+    description: 'Black Crew nect T-shirt',
+  },
 ];
 
 export default data;
