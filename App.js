@@ -13,6 +13,11 @@ import SplashScreen from  "react-native-splash-screen";
 import HomeScreen from './Screens/HomeScreen';
 import SettingsMenu from './Screens/SettingsMenu';
 import VoiceMenu from './Screens/VoiceMenu';
+import FoodForm from './src/foodForm';
+import FoodList from './src/foodList';
+import { Provider } from 'react-redux';
+import configureStore from './src/store';
+const store = configureStore();
 
 InAppReview.isAvailable();
 InAppReview.RequestInAppReview()
@@ -39,6 +44,7 @@ const App = () => {
   });
 
   return (
+    <Provider store={store}>
     <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen options={{headerShown: false}} name="init" component={initialScreen} />
@@ -47,8 +53,11 @@ const App = () => {
       <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
       <Stack.Screen options={{headerShown: false}} name="SettingsMenu" component={SettingsMenu} />
       <Stack.Screen options={{headerShown: false}} name="VoiceMenu" component={VoiceMenu} />
+      <Stack.Screen options={{headerShown: false}} name="FoodForm" component={FoodForm} />
+      <Stack.Screen options={{headerShown: false}} name="FoodList" component={FoodList} />
     </Stack.Navigator>
   </NavigationContainer>
+  </Provider>
   )
 }
 
