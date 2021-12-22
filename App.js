@@ -55,13 +55,9 @@ const App = () => {
       <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
       <Stack.Screen options={{headerShown: false}} name="SettingsMenu" component={SettingsMenu} />
       <Stack.Screen options={{headerShown: false}} name="VoiceMenu" component={VoiceMenu} />
-<<<<<<< HEAD
       <Stack.Screen options={{headerShown: false}} name="Landing" component={LandingPage} />
-=======
       <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon {...props} /> }} />
       <Stack.Screen options={{headerShown: false}} name="CartScreen" component={CartScreen} />
-      
->>>>>>> 488e0e2ffe304232fcc842c36e6e9d919f63f1b0
     </Stack.Navigator>
   </NavigationContainer>
   </StoreProvider>

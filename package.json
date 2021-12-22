@@ -31,14 +31,10 @@
     "react-native-screens": "^3.10.1",
     "react-native-splash-screen": "^3.3.0",
     "react-native-vector-icons": "^9.0.0",
-<<<<<<< HEAD
     "react-native-web-swiper": "^2.2.2",
-    "react-native-webview": "^11.15.0"
-=======
     "react-native-webview": "^11.15.0",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2"
->>>>>>> 488e0e2ffe304232fcc842c36e6e9d919f63f1b0
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
