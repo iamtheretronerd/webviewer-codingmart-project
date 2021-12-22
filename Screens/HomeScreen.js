@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -18,48 +18,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {black} from 'react-native-paper/lib/typescript/styles/colors';
 import data from '../Data';
 import {Picker, Item} from '@react-native-picker/picker';
-
-import {
-  GoogleSignin,
-  GoogleSigninButton,
-  statusCodes,
-} from '@react-native-google-signin/google-signin';
-
 const HomeScreen = ({navigation}) => {
-
-  
-  useEffect(() => {
-    GoogleSignin.configure({
-        webClientId: '566489472256-3cljtd1ta3tf9nnu6toef72t810fpe02.apps.googleusercontent.com'
-      });
-})
-
-const signIn = async () => {
-    try {
-      await GoogleSignin.hasPlayServices();
-      const userInfo = await GoogleSignin.signIn();
-      alert(JSON.stringify(userInfo))
-    //   this.setState({ userInfo });
-    } catch (error) {
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-          alert("1:"+error.code)
-        // user cancelled the login flow
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        // operation (e.g. sign in) is in progress already
-        alert("2:"+error.code)
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        // play services not available or outdated
-        alert("3:"+error.code)
-      } else {
-        // some other error happened
-        alert("4:"+error.code)
-      }
-    }
-  };
-
-
-
-
   const [selectedValue, setSelectedValue] = useState('S');
   const [selectedqty, setSelectedqty] = useState('1');
   const [modalVisible, setModalVisible] = useState(false);
@@ -70,127 +29,7 @@ const signIn = async () => {
     <View>
       <DoubleTapToClose />
       {/* NAVBAR START */}
-      <View style={styles.navbar}>
-        <View style={{flexDirection: 'row'}}>
-          <Image
-            style={styles.imageSize3}
-            source={require('../Images/logo.png')}
-          />
-          <Text style={styles.labelstyle}>FactoryWorkx</Text>
 
-          <Pressable onPress={() => setModalVisible(true)}>
-            <Image
-              style={styles.imageSizeMenu}
-              source={require('../Images/menu.png')}
-            />
-          </Pressable>
-
-          <Modal
-            testID={'modal'}
-            isVisible={modalVisible}
-            animationIn="slideInRight"
-            animationOut="slideOutRight">
-            <View>
-              <View style={styles.modalView}>
-                <Pressable onPress={() => setModalVisible(!modalVisible)}>
-                  <Image
-                    style={styles.imageSizeClose}
-                    source={require('../Images/close.png')}
-                  />
-                  <Text style={styles.name}>Hello, Ritwick S B</Text>
-                </Pressable>
-
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.replace('Home')}>
-                  <Text style={styles.navText}>HOME</Text>
-                </Pressable>
-
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.replace('VoiceMenu')}>
-                  <Text style={styles.navText}>VOICE SEARCH</Text>
-                </Pressable>
-
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('SettingsMenu')}>
-                  <Text style={styles.navText}>SETTINGS</Text>
-                </Pressable>
-
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('SettingsMenu')}>
-                  <Text style={styles.navText}>MY OFFERS</Text>
-                </Pressable>
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('BookScreen')}>
-                  <Text style={styles.navText}>FAQs</Text>
-                </Pressable>
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('CartScreen')}>
-                  <Text style={styles.navText}>POLICIES</Text>
-                </Pressable>
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('SettingsMenu')}>
-                  <Text style={styles.navText}>ABOUT US</Text>
-                </Pressable>
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('SettingsMenu')}>
-                  <Text style={styles.navText}>RATE THE APP</Text>
-                </Pressable>
-
-                 {/* GOOGLE SIGN IN */}
-                 <GoogleSigninButton
-                   style={{ width: 192, height: 48, marginLeft:-20, marginTop: 15, marginBottom: -12 }}
-                   color={GoogleSigninButton.Color.Dark}
-                  onPress={signIn}>
-                </GoogleSigninButton>
-                {/* END */}
-
-                <View>
-                  <Text style={styles.follow}>FOLLOW US ON</Text>
-                  <View style={styles.iconsection}>
-                    <Image
-                      style={styles.icon}
-                      source={require('../Images/fb2.png')}
-                    />
-                    <Image
-                      style={styles.lineicon}
-                      source={require('../Images/line.png')}
-                    />
-                    <Image
-                      style={styles.icon}
-                      source={require('../Images/insta.png')}
-                    />
-                    <Image
-                      style={styles.lineicon}
-                      source={require('../Images/line.png')}
-                    />
-                    <Image
-                      style={styles.icon}
-                      source={require('../Images/twiter.png')}
-                    />
-                    {/* <Image
-                      style={styles.icon}
-                      source={require('../Images/logout.png')}
-                    /> */}
-                     <Pressable
-                      style={styles.logout}
-                      onPress={() => navigation.navigate('SettingsMenu')}>
-                      <Text style={styles.navlog}>LOG OUT</Text>
-                    </Pressable>
-                  </View>
-                </View>
-              </View>
-            </View>
-          </Modal>
-        </View>
-      </View>
       {/* NAVBAR END */}
       <View style={styles.screen}>
         {/* HEADER */}
@@ -411,7 +250,7 @@ const styles = StyleSheet.create({
   products: {
     marginTop: '5%',
     height: '30%',
-    backgroundColor: 'lightgray',
+    backgroundColor: 'white',
     width: '100%',
   },
   //offers
@@ -459,11 +298,12 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   screen: {
+    marginTop:'8%',
     height: '100%',
     backgroundColor: '#F0F1F2',
   },
-   // STYLES FOR NAVBAR
-   lineicon: {
+  // STYLES FOR NAVBAR
+  lineicon: {
     height: '35%',
     width: '2%',
     marginTop: '5%',
@@ -479,8 +319,8 @@ const styles = StyleSheet.create({
   icon: {
     marginLeft: '2%',
     marginTop: '5%',
-    height: 40,
-    width: 40,
+    height: '35%',
+    width: '15%',
     borderRadius: 10,
   },
 
@@ -502,9 +342,7 @@ const styles = StyleSheet.create({
     height: '10%',
     backgroundColor: 'white',
   },
-  screen: {
-    height: '100%',
-  },
+
   imageSize3: {
     marginLeft: 20,
     marginTop: 10,
@@ -552,27 +390,12 @@ const styles = StyleSheet.create({
   menuText: {
     width: '50%',
   },
-  logout:{
-    fontSize: 7,
-    width: '50%',
-    marginLeft: '45%',
-  },
   navText: {
     width: '100%',
     textAlign: 'left',
     fontSize: 20,
     color: 'black',
-    marginTop: 18,
-    marginLeft: '-10%',
-    paddingTop: '4%',
-  },
-  navlog: {
-    width: '100%',
-    textAlign: 'left',
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: 'black',
-    marginTop: 18,
+    marginTop: 20,
     marginLeft: '-10%',
     paddingTop: '4%',
   },
