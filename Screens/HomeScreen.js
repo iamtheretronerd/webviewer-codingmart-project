@@ -125,12 +125,12 @@ const signIn = async () => {
                 </Pressable>
                 <Pressable
                   style={styles.menuText}
-                  onPress={() => navigation.navigate('SettingsMenu')}>
+                  onPress={() => navigation.navigate('BookScreen')}>
                   <Text style={styles.navText}>FAQs</Text>
                 </Pressable>
                 <Pressable
                   style={styles.menuText}
-                  onPress={() => navigation.navigate('SettingsMenu')}>
+                  onPress={() => navigation.navigate('CartScreen')}>
                   <Text style={styles.navText}>POLICIES</Text>
                 </Pressable>
                 <Pressable

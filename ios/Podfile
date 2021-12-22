@@ -16,6 +16,8 @@ target 'newapp' do
 
   pod 'react-native-in-app-review', :path => '../node_modules/react-native-in-app-review'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'newappTests' do
     inherit! :complete
     # Pods for testing

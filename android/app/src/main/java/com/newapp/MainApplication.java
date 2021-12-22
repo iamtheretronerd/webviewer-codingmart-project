@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.ibits.react_native_in_app_review.AppReviewPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.facebook.react.ReactInstanceManager;
@@ -23,6 +24,7 @@ public class MainApplication extends Application implements ReactApplication {
 protected List<ReactPackage> getPackages() {
     return Arrays.asList(
             new MainReactPackage(),
+            new VectorIconsPackage(),
             new AppReviewPackage()
             
     );

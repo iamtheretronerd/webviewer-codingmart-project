@@ -14,6 +14,12 @@ import SplashScreen from  "react-native-splash-screen";
 import HomeScreen from './Screens/HomeScreen';
 import SettingsMenu from './Screens/SettingsMenu';
 import VoiceMenu from './Screens/VoiceMenu';
+import BookScreen from './Screens/BookScreen';
+import CartScreen from './Screens/CartScreen';
+import ShoppingCartIcon from './components/ShoppingCartIcon';
+import { Provider as StoreProvider } from 'react-redux'
+import store from './redux/store'
+
 
 InAppReview.isAvailable();
 InAppReview.RequestInAppReview()
@@ -40,6 +46,7 @@ const App = () => {
   });
 
   return (
+    <StoreProvider store={store}>
     <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen options={{headerShown: false}} name="init" component={initialScreen} />
@@ -48,9 +55,17 @@ const App = () => {
       <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
       <Stack.Screen options={{headerShown: false}} name="SettingsMenu" component={SettingsMenu} />
       <Stack.Screen options={{headerShown: false}} name="VoiceMenu" component={VoiceMenu} />
+<<<<<<< HEAD
       <Stack.Screen options={{headerShown: false}} name="Landing" component={LandingPage} />
+=======
+      <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon {...props} /> }} />
+      <Stack.Screen options={{headerShown: false}} name="CartScreen" component={CartScreen} />
+      
+>>>>>>> 488e0e2ffe304232fcc842c36e6e9d919f63f1b0
     </Stack.Navigator>
   </NavigationContainer>
+  </StoreProvider>
+  
   )
 }
 
