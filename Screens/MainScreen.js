@@ -179,7 +179,7 @@ const signIn = async () => {
 
                 <Pressable
                   style={styles.menuText}
-                  onPress={() => navigation.navigate('SettingsMenu')}>
+                  onPress={() => navigation.navigate('Landing')}>
                   <Text style={styles.navText}>MY OFFERS</Text>
                 </Pressable>
                 <Pressable

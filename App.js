@@ -8,6 +8,7 @@ import InAppReview from 'react-native-in-app-review';
 import MainScreen from './Screens/MainScreen';
 import SettingsScreen from './Screens/SettingsScreen';
 import initialScreen from './Screens/initialScreen';
+import LandingPage from './Screens/LandingPage'
 
 import SplashScreen from  "react-native-splash-screen";
 import HomeScreen from './Screens/HomeScreen';
@@ -47,6 +48,7 @@ const App = () => {
       <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
       <Stack.Screen options={{headerShown: false}} name="SettingsMenu" component={SettingsMenu} />
       <Stack.Screen options={{headerShown: false}} name="VoiceMenu" component={VoiceMenu} />
+      <Stack.Screen options={{headerShown: false}} name="Landing" component={LandingPage} />
     </Stack.Navigator>
   </NavigationContainer>
   )
