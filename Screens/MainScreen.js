@@ -194,12 +194,12 @@ const signIn = async () => {
                 </Pressable>
                 <Pressable
                   style={styles.menuText}
-                  onPress={() => navigation.navigate('SettingsMenu')}>
+                  onPress={() => navigation.navigate('TableScreen')}>
                   <Text style={styles.navText}>ABOUT US</Text>
                 </Pressable>
                 <Pressable
                   style={styles.menuText}
-                  onPress={() => navigation.navigate('SettingsMenu')}>
+                  onPress={() => navigation.navigate('Camera')}>
                   <Text style={styles.navText}>RATE THE APP</Text>
                 </Pressable>
 

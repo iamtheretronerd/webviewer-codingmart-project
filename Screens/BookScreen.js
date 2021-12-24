@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   StyleSheet
 } from 'react-native'
-import { color } from 'react-native-elements/dist/helpers'
 import { useDispatch } from 'react-redux'
 import { ADD_TO_CART } from '../redux/CartItem'
 import { books } from '../utils/Data'

@@ -16,6 +16,10 @@ import SettingsMenu from './Screens/SettingsMenu';
 import VoiceMenu from './Screens/VoiceMenu';
 import BookScreen from './Screens/BookScreen';
 import CartScreen from './Screens/CartScreen';
+import TableScreen from './Screens/TableScreen';
+//Camera
+import Camera from './components/Camera'
+
 import ShoppingCartIcon from './components/ShoppingCartIcon';
 import { Provider as StoreProvider } from 'react-redux'
 import store from './redux/store'
@@ -56,8 +60,12 @@ const App = () => {
       <Stack.Screen options={{headerShown: false}} name="SettingsMenu" component={SettingsMenu} />
       <Stack.Screen options={{headerShown: false}} name="VoiceMenu" component={VoiceMenu} />
       <Stack.Screen options={{headerShown: false}} name="Landing" component={LandingPage} />
-      <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon {...props} /> }} />
+      <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon  /> }} />
       <Stack.Screen options={{headerShown: false}} name="CartScreen" component={CartScreen} />
+      <Stack.Screen options={{headerShown: false}} name="TableScreen" component={TableScreen} />
+      <Stack.Screen options={{headerShown: false}} name="Camera" component={Camera} />
+      
+
     </Stack.Navigator>
   </NavigationContainer>
   </StoreProvider>
