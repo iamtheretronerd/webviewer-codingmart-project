@@ -23,6 +23,7 @@ import Camera from './components/Camera'
 import ShoppingCartIcon from './components/ShoppingCartIcon';
 import { Provider as StoreProvider } from 'react-redux'
 import store from './redux/store'
+import NavBar from './Modules/NavBar';
 
 
 InAppReview.isAvailable();
@@ -53,19 +54,16 @@ const App = () => {
     <StoreProvider store={store}>
     <NavigationContainer>
     <Stack.Navigator>
-      <Stack.Screen options={{headerShown: false}} name="init" component={initialScreen} />
+      <Stack.Screen options={{headerShown: false}} name="Landing" component={LandingPage} />
       <Stack.Screen options={{headerShown: false}} name="Settings" component={SettingsScreen} />
       <Stack.Screen options={{headerShown: false}} name="Main" component={MainScreen} />
       <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
       <Stack.Screen options={{headerShown: false}} name="SettingsMenu" component={SettingsMenu} />
       <Stack.Screen options={{headerShown: false}} name="VoiceMenu" component={VoiceMenu} />
-      <Stack.Screen options={{headerShown: false}} name="Landing" component={LandingPage} />
-      <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon  /> }} />
+      <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon {...props} /> }} />
       <Stack.Screen options={{headerShown: false}} name="CartScreen" component={CartScreen} />
-      <Stack.Screen options={{headerShown: false}} name="TableScreen" component={TableScreen} />
-      <Stack.Screen options={{headerShown: false}} name="Camera" component={Camera} />
-      
-
+      <Stack.Screen options={{headerShown: false}} name="init" component={initialScreen} />
+      <Stack.Screen options={{headerShown:false}} name="navbar" component={NavBar} />
     </Stack.Navigator>
   </NavigationContainer>
   </StoreProvider>

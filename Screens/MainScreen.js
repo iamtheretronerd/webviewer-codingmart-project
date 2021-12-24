@@ -21,6 +21,7 @@ import {
     GoogleSigninButton,
     statusCodes,
   } from '@react-native-google-signin/google-signin';
+import NavBar from '../Modules/NavBar';
 
 var delayInMilliseconds = 5000; //1 second
 
@@ -129,118 +130,7 @@ const signIn = async () => {
   return (
     <View style={styles.webvw}>
       <DoubleTapToClose />
-      <View style={styles.navbar}>
-        <View style={{flexDirection: 'row'}}>
-          <Image
-            style={styles.imageSize3}
-            source={require('../Images/logo.png')}
-          />
-          <Text style={styles.labelstyle}>FactoryWorkx</Text>
-
-          <Pressable onPress={() => setModalVisible(true)}>
-            <Image
-              style={styles.imageSizeMenu}
-              source={require('../Images/menu.png')}
-            />
-          </Pressable>
-
-          <Modal
-            testID={'modal'}
-            isVisible={modalVisible}
-            animationIn="slideInRight"
-            animationOut="slideOutRight">
-            <View>
-              <View style={styles.modalView}>
-                <Pressable onPress={() => setModalVisible(!modalVisible)}>
-                  <Image
-                    style={styles.imageSizeClose}
-                    source={require('../Images/close.png')}
-                  />
-                  <Text style={styles.name}>Hello, Ritwick S B</Text>
-                </Pressable>
-
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.replace('Home')}>
-                  <Text style={styles.navText}>HOME</Text>
-                </Pressable>
-
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.replace('VoiceMenu')}>
-                  <Text style={styles.navText}>VOICE SEARCH</Text>
-                </Pressable>
-
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('SettingsMenu')}>
-                  <Text style={styles.navText}>SETTINGS</Text>
-                </Pressable>
-
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('Landing')}>
-                  <Text style={styles.navText}>MY OFFERS</Text>
-                </Pressable>
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('BookScreen')}>
-                  <Text style={styles.navText}>FAQs</Text>
-                </Pressable>
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('CartScreen')}>
-                  <Text style={styles.navText}>POLICIES</Text>
-                </Pressable>
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('TableScreen')}>
-                  <Text style={styles.navText}>ABOUT US</Text>
-                </Pressable>
-                <Pressable
-                  style={styles.menuText}
-                  onPress={() => navigation.navigate('Camera')}>
-                  <Text style={styles.navText}>RATE THE APP</Text>
-                </Pressable>
-
-                 {/* GOOGLE SIGN IN */}
-                 <GoogleSigninButton
-                   style={{ width: 192, height: 48, marginLeft:-20, marginTop: 15, marginBottom: -12 }}
-                   color={GoogleSigninButton.Color.Dark}
-                  onPress={signIn}>
-                </GoogleSigninButton>
-                {/* END */}
-
-                <View>
-                  <Text style={styles.follow}>FOLLOW US ON</Text>
-                  <View style={styles.iconsection}>
-                    <Image
-                      style={styles.icon}
-                      source={require('../Images/fb2.png')}
-                    />
-                    <Image
-                      style={styles.lineicon}
-                      source={require('../Images/line.png')}
-                    />
-                    <Image
-                      style={styles.icon}
-                      source={require('../Images/insta.png')}
-                    />
-                    <Image
-                      style={styles.lineicon}
-                      source={require('../Images/line.png')}
-                    />
-                    <Image
-                      style={styles.icon}
-                      source={require('../Images/twiter.png')}
-                    />
-                  </View>
-                </View>
-              </View>
-            </View>
-          </Modal>
-        </View>
-      </View>
+      <NavBar />
       <WebView
         ref={WEBVIEW_REF => (WebViewRef = WEBVIEW_REF)}
         //Loading URL
