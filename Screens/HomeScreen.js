@@ -4,7 +4,6 @@ import {
   Text,
   View,
   Image,
-  Pressable,
   TouchableOpacity,
   ScrollView,
   FlatList,
