@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { StyleSheet, Text, View, ScrollView,  TextInput, Image, Pressable, Button } from 'react-native'
-import Swiper from 'react-native-web-swiper';
+
 import IconsLayout from '../Modules/iconsLayout';
 import NavBar from '../Modules/NavBar';
 import SwiperLayout from '../Modules/SwiperLayout';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-import PhoneInput from 'react-native-phone-input'
+
+
 
 import Modal from 'react-native-modal';
 
