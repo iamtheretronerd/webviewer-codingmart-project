@@ -17,7 +17,7 @@ import {
   } from '@react-native-google-signin/google-signin';
 
 
-const LandingPage = () => {
+const LandingPage = ({navigation}) => {
     useEffect(() => {
         GoogleSignin.configure({
             webClientId: '566489472256-3cljtd1ta3tf9nnu6toef72t810fpe02.apps.googleusercontent.com'
@@ -121,7 +121,10 @@ const LandingPage = () => {
                         value={text}
                     />
                      <Image style={styles.imageSizeicon} source={require('../Images/search.png')}  />
-                     <Image style={styles.imageSizeicon} source={require('../Images/camera.png')}  />
+                     <Pressable onPress={() => navigation.replace('camera')}>
+                        <Image style={styles.imageSizeicon} source={require('../Images/camera.png')}  />
+                     </Pressable>
+                    
                 </View>
             </View>
             {/* INPUT OVER */}

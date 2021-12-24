@@ -10,6 +10,7 @@ import SettingsScreen from './Screens/SettingsScreen';
 import initialScreen from './Screens/initialScreen';
 import LandingPage from './Screens/LandingPage'
 
+
 import SplashScreen from  "react-native-splash-screen";
 import HomeScreen from './Screens/HomeScreen';
 import SettingsMenu from './Screens/SettingsMenu';
@@ -63,6 +64,7 @@ const App = () => {
       <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon {...props} /> }} />
       <Stack.Screen options={{headerShown: false}} name="CartScreen" component={CartScreen} />
       <Stack.Screen options={{headerShown: false}} name="init" component={initialScreen} />
+      <Stack.Screen options={{headerShown: false}} name="camera" component={Camera} />
       <Stack.Screen options={{headerShown:false}} name="navbar" component={NavBar} />
     </Stack.Navigator>
   </NavigationContainer>

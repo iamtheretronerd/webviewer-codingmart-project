@@ -90,7 +90,7 @@
 
 // export default PhotoCamera;
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // Import required components
 import {
   SafeAreaView,
@@ -112,6 +112,11 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Camera = () => {
+
+  useEffect( () =>{
+    captureImage('photo')
+  })
+
   const [filePath, setFilePath] = useState({});
 
   const requestCameraPermission = async () => {
@@ -257,7 +262,8 @@ const Camera = () => {
           style={styles.buttonStyle}
           onPress={() => captureImage('video')}>
           <Text style={styles.textStyle}>
-            Launch Camera for Video
+            Launch Camera 
+            
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
