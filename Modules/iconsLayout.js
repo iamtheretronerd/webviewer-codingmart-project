@@ -3,15 +3,19 @@ import { StyleSheet, Text, View,ScrollView,Image, Pressable } from 'react-native
 import landingCont from '../JSON/StatusContainer/landingcont'
 import { useNavigation } from '@react-navigation/native';
 
-function clickednow(id){
-    const navigation = useNavigation(); 
-    if( id == "1"){
-        navigation.replace('')
-    }
-}
 
 const IconsLayout = (props) => {
-
+    const navigation = useNavigation(); 
+    function clickednow(id){
+        
+        if( id == "1"){
+            navigation.replace('TableScreen')
+        }
+        if(id=="2"){
+            navigation.replace('')
+        }
+    }
+    
     return (
         <View>
                         <View  style={styles.statusContainer}>

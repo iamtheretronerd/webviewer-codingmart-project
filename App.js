@@ -66,6 +66,8 @@ const App = () => {
       <Stack.Screen options={{headerShown: false}} name="init" component={initialScreen} />
       <Stack.Screen options={{headerShown: false}} name="camera" component={Camera} />
       <Stack.Screen options={{headerShown:false}} name="navbar" component={NavBar} />
+      <Stack.Screen options={{headerShown:false}} name="TableScreen" component={TableScreen} />
+
     </Stack.Navigator>
   </NavigationContainer>
   </StoreProvider>
