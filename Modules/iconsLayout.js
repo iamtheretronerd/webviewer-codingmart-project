@@ -1,6 +1,14 @@
 import React from 'react'
-import { StyleSheet, Text, View,ScrollView,Image } from 'react-native'
+import { StyleSheet, Text, View,ScrollView,Image, Pressable } from 'react-native'
 import landingCont from '../JSON/StatusContainer/landingcont'
+import { useNavigation } from '@react-navigation/native';
+
+function clickednow(id){
+    const navigation = useNavigation(); 
+    if( id == "1"){
+        navigation.replace('')
+    }
+}
 
 const IconsLayout = (props) => {
 
@@ -10,7 +18,10 @@ const IconsLayout = (props) => {
                             <ScrollView  horizontal={true}> 
                             {landingCont.map(datas => (
                                     <View>
-                                        <Image style={styles.imageSizeStatus} source={{uri: datas.url}}  />
+                                        <Pressable onPress={() => clickednow(datas.id)}>
+                                             <Image style={styles.imageSizeStatus} source={{uri: datas.url}}  />
+                                        </Pressable>
+                                        
                                         <Text style={{textAlign: 'center', marginTop: 10, fontSize: 16, color: 'black'}}>{datas.name}</Text>
                                     </View>
                             ))}
