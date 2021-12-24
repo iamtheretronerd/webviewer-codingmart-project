@@ -4,6 +4,9 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.imagepicker.ImagePickerPackage;
+import org.reactnative.camera.RNCameraPackage;
+import org.reactnative.camera.RNCameraPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.ibits.react_native_in_app_review.AppReviewPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
@@ -14,6 +17,9 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Arrays;
+
+import org.reactnative.camera.RNCameraPackage;
+
 //New
 import com.ibits.react_native_in_app_review.AppReviewPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -24,8 +30,12 @@ public class MainApplication extends Application implements ReactApplication {
 protected List<ReactPackage> getPackages() {
     return Arrays.asList(
             new MainReactPackage(),
+            new ImagePickerPackage(),
+            new RNCameraPackage(),
+            new RNCameraPackage(),
             new VectorIconsPackage(),
-            new AppReviewPackage()
+            new AppReviewPackage(),
+            new RNCameraPackage()
             
     );
 }

@@ -5,11 +5,13 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
-import {useDispatch} from 'react-redux';
-import {ADD_TO_CART} from '../redux/CartItem';
-import {books} from '../utils/Data';
+
+  StyleSheet
+} from 'react-native'
+import { useDispatch } from 'react-redux'
+import { ADD_TO_CART } from '../redux/CartItem'
+import { books } from '../utils/Data'
+
 
 function Separator() {
   return <View style={{borderBottomWidth: 1, borderBottomColor: '#a9a9a9'}} />;
