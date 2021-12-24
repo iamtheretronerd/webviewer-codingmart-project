@@ -12,7 +12,7 @@ const IconsLayout = (props) => {
             navigation.replace('TableScreen')
         }
         if(id=="2"){
-            navigation.replace('')
+            navigation.replace('Home')
         }
     }
     

@@ -17,6 +17,7 @@ const TableScreen = () => {
   }, []);
 
   return (
+    
     <Provider>
       {/* <Appbar.Header style={styles.header}> 
       <Appbar.BackAction onPress={_goBack} /> 

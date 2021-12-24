@@ -62,10 +62,10 @@ const App = () => {
       <Stack.Screen options={{headerShown: false}} name="Landing" component={LandingPage} />
       <Stack.Screen options={{headerShown: false}} name="Settings" component={SettingsScreen} />
       <Stack.Screen options={{headerShown: false}} name="Main" component={MainScreen} />
-      <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
+      <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} options={{ headerRight: props => <ShoppingCartIcon {...props} /> }}/>
       <Stack.Screen options={{headerShown: false}} name="SettingsMenu" component={SettingsMenu} />
       <Stack.Screen options={{headerShown: false}} name="VoiceMenu" component={VoiceMenu} />
-      <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon {...props} /> }} />
+      {/* <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon {...props} /> }} /> */}
       <Stack.Screen options={{headerShown: false}} name="CartScreen" component={CartScreen} />
       <Stack.Screen options={{headerShown: false}} name="init" component={initialScreen} />
       <Stack.Screen options={{headerShown: false}} name="camera" component={Camera} />
