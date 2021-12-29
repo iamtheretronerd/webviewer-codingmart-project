@@ -2,7 +2,7 @@ import * as React from 'react';
 import {useEffect, useState} from 'react';
 import {Platform, BackHandler, ToastAndroid, Alert} from 'react-native';
 
-export const ExecuteOnlyOnAndroid = (props) => {
+export const ExecuteOnlyOnAndroid = props => {
   const {message} = props;
   const [exitApp, setExitApp] = useState(0);
   const backAction = () => {
@@ -15,22 +15,14 @@ export const ExecuteOnlyOnAndroid = (props) => {
 
       ToastAndroid.show(message, ToastAndroid.SHORT);
     } else if (exitApp === 1) {
-
-        Alert.alert(
-            "Close App",
-            "Do you want to close app ?",
-            [
-              {
-                text: "Cancel",
-                onPress: () => console.log("Cancel Pressed"),
-                style: "cancel"
-              },
-              { text: "OK", onPress: () => BackHandler.exitApp() }
-            ]
-          );
-
-
-      
+      Alert.alert('Close App', 'Do you want to close app ?', [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {text: 'OK', onPress: () => BackHandler.exitApp()},
+      ]);
     }
     return true;
   };
