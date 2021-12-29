@@ -136,6 +136,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        missingDimensionStrategy 'react-native-camera','mlkit'
     }
     splits {
         abi {
@@ -198,6 +199,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-camera')
      //New
     implementation project(':react-native-in-app-review')
      implementation 'com.google.android.play:core:1.10.2'
