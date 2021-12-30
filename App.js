@@ -28,6 +28,7 @@ import ShoppingCartIcon from './components/ShoppingCartIcon';
 import { Provider as StoreProvider } from 'react-redux'
 import store from './redux/store'
 import NavBar from './Modules/NavBar';
+import Terms from './Screens/terms';
 
 
 
@@ -71,6 +72,7 @@ const App = () => {
       <Stack.Screen options={{headerShown: false}} name="camera" component={Camera} />
       <Stack.Screen options={{headerShown:false}} name="navbar" component={NavBar} />
       <Stack.Screen options={{headerShown:false}} name="TableScreen" component={TableScreen} />
+      <Stack.Screen options={{headerShown:false}} name="terms" component={Terms} />
 
     </Stack.Navigator>
   </NavigationContainer>
