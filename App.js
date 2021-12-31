@@ -29,6 +29,7 @@ import { Provider as StoreProvider } from 'react-redux'
 import store from './redux/store'
 import NavBar from './Modules/NavBar';
 
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 
 InAppReview.isAvailable();
@@ -62,8 +63,8 @@ const App = () => {
       <Stack.Screen options={{headerShown: false}} name="Landing" component={LandingPage} />
       <Stack.Screen options={{headerShown: false}} name="Settings" component={SettingsScreen} />
       <Stack.Screen options={{headerShown: false}} name="Main" component={MainScreen} />
-      <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} options={{ headerRight: props => <ShoppingCartIcon {...props} /> }}/>
-      <Stack.Screen options={{headerShown: false}} name="SettingsMenu" component={SettingsMenu} />
+      <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} options={{headerTitle:'       SHIRTS',headerRight: props => <ShoppingCartIcon {...props} />}}/>
+      <Stack.Screen options={{headerShown: false}} name="SettingsMenu" component={SettingsMenu}opt/>
       <Stack.Screen options={{headerShown: false}} name="VoiceMenu" component={VoiceMenu} />
       {/* <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon {...props} /> }} /> */}
       <Stack.Screen options={{headerShown: false}} name="CartScreen" component={CartScreen} />

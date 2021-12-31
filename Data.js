@@ -1,34 +1,42 @@
 export const books = [
   {
     id: 1,
-    name: 'Louis Philippe',
-    author: 'Black Crew nect T-shirt',
-    rate: '500',
+    name: 'VAN HEUSAN WHITE SHIRT',
+    
+    rate: '2070',
+    changerate:'2999',
+    discount:'10%',
     imgUrl:
-      'https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/7488102/2019/8/22/8002a744-0dad-4dbb-9481-cf0090134c3b1566454086786-Dennis-Lingo-Men-Pink-Slim-Fit-Solid-Casual-Shirt-9891566454-1.jpg',
+    'https://vanheusenindia.imgix.net/img/app/product/2/254237-955852.jpg?w=190&auto=format',
   },
   {
     id: 2,
-    name: 'Louis Philippe',
-    author: 'Black Crew nect T-shirt',
-    rate: '650',
+    name: 'VAN HEUSAN WHITE SHIRT',
+    
+    rate: '2070',
+    changerate:'2999',
+    discount:'10%',
     imgUrl:
-      'https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/11958614/2020/7/30/11dd6a95-2e66-4ca5-99cd-8363215b3c5f1596108241030-Roadster-Men-Shirts-6261596108238859-1.jpg',
+    'https://vanheusenindia.imgix.net/img/app/product/2/233858-821791.jpg?auto=format&w=220',
   },
   {
     id: 3,
-    name: 'Louis Philippe',
-    author: 'Black Crew nect T-shirt',
-    rate: '550',
+    name: 'VAN HEUSAN MAROON SHIRT',
+   
+    rate: '2070',
+    changerate:'2999',
+    discount:'10%',
     imgUrl:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvsyZTv0WAzRsfJbOx8poo4m_REAuEaQS8Ww&usqp=CAU',
+      'https://vanheusenindia.imgix.net/img/app/product/5/572413-5055805.jpg?auto=format&w=230',
   },
   {
     id: 4,
-    name: 'Louis Philippe',
-    author: 'Black Crew nect T-shirt',
-    rate: '600',
+    name: 'VAN HEUSAN NAVY SHIRT',
+   
+    rate: '2070',
+    changerate:'2999',
+    discount:'10%',
     imgUrl:
-      'https://images-eu.ssl-images-amazon.com/images/I/61Z4RuwOZeL._AC._SR360,460.jpg',
+      'https://vanheusenindia.imgix.net/img/app/product/5/572094-5051672.jpg?auto=format&w=230',
   },
 ];

@@ -1,6 +1,7 @@
 //Actions
 export const ADD_TO_CART = 'ADD_TO_CART'
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
+
 //Actions
 
 //Reducers
@@ -12,7 +13,8 @@ const cartItemsReducer = (state = initialState, action) => {
       return [...state, action.payload]
     case REMOVE_FROM_CART:
       return state.filter(cartItem => cartItem.id !== action.payload.id)
-  }
+  
+    }
   return state
 }
 
