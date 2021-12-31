@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, Text, View, ScrollView,  TextInput, Image, Pressable, Button } from 'react-native'
+import { StyleSheet, Text, View, ScrollView,  TextInput, Image, Pressable, Button, TouchableOpacity } from 'react-native'
 
 import IconsLayout from '../Modules/iconsLayout';
 import NavBar from '../Modules/NavBar';
 import SwiperLayout from '../Modules/SwiperLayout';
+
+import DoubleTapToClose from './close';
 
 
 
@@ -56,6 +58,7 @@ const LandingPage = ({navigation}) => {
     const [text, onChangeText] = React.useState("")
     return (
         <View style={{backgroundColor: 'white', height: '100%'}}>
+            <DoubleTapToClose />
             <Modal
                     testID={'modal'}
                     isVisible={modalVisible}
@@ -67,6 +70,7 @@ const LandingPage = ({navigation}) => {
                                 style={styles.imageSizeClose}
                                 source={require('../Images/close.png')}
                             />
+                        </Pressable>
                             <Text style={styles.h1}>Welcome to FactoryWorkx</Text>
                             <Text style={styles.h2}>Sign Up / Login To See Your Order History</Text>
                             <Text style={styles.hphone}>Please enter your mobile number</Text>
@@ -84,29 +88,50 @@ const LandingPage = ({navigation}) => {
                                 </View>
                            
                             <Text style={{textAlign: 'center',marginTop:15}}>
+                            <TouchableOpacity>
                                 <Text>By signing up I agree to  </Text>
-                                <Text style={{color:'black', textDecorationLine:'underline'}}>Terms of use </Text>
-                                <Text>and </Text>
-                                <Text style={{color:'black', textDecorationLine:'underline'}}>Privacy Policy</Text>
+                            </TouchableOpacity>
+                               
+
+                                <TouchableOpacity  onPress={() => navigation.replace('terms')}>
+                                    <Text style={{color:'black', textDecorationLine:'underline'}}>Terms of use </Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity><Text>&nbsp;&nbsp;and </Text></TouchableOpacity>
+                                <TouchableOpacity  onPress={() => navigation.replace('terms')}>
+                                    <Text style={{color:'black', textDecorationLine:'underline'}}>Privacy Policy </Text>
+                                </TouchableOpacity>
                             </Text>
                             
                             <View style={{height: 15}} />
 
-                            <Button
+                            <TouchableOpacity onPress={() => setModalVisible(false)}> 
+                                 
+                                <Text style = {{backgroundColor: 'black', borderWidth:2, color: 'white', textAlign: 'center', paddingVertical:8, borderRadius:5, fontSize :18}}>
+                                    Submit
+                                </Text>
+                            </TouchableOpacity >
+
+                            {/* <Button
                                 onPress={() => setModalVisible(false)}
                                 title="Submit"
-                                color="black"
-                            />
+                            /> */}
 
                             <View style={{height: 1, backgroundColor: 'lightgrey', marginTop:30}} />
 
-                            <GoogleSigninButton
+                            {/* <GoogleSigninButton
                                 style={{ width: '100%', height: 48, marginTop: 15  }}
                                 color={GoogleSigninButton.Color.Light}
                                 onPress={signIn}>
-                                </GoogleSigninButton>
+                                </GoogleSigninButton> */}
 
-                        </Pressable>
+                                <TouchableOpacity onPress={signIn}> 
+                               
+                                        <Text style = {{backgroundColor: 'white',marginTop: 25, borderWidth:2, color: 'black',borderColor:'#f5f9fc',textDecorationLine:'underline', textAlign: 'center', paddingVertical:8, borderRadius:5, fontSize :15}}>
+                                             <Image style={styles.googleicon} source={require('../Images/google.png')}  /><View style={{width:10}}/>SIGN IN WITH GMAIL
+                                        </Text>
+                            </TouchableOpacity >
+
+                        
 
                         </View>
             </Modal>
@@ -118,7 +143,7 @@ const LandingPage = ({navigation}) => {
                         style={styles.input}
                         placeholder='&nbsp; &nbsp; Search' 
                         onChangeText={onChangeText}
-                        value={text}
+                        value={text}      
                     />
                      <Image style={styles.imageSizeicon} source={require('../Images/search.png')}  />
                      <Pressable onPress={() => navigation.replace('camera')}>
@@ -128,7 +153,7 @@ const LandingPage = ({navigation}) => {
                 </View>
             </View>
             {/* INPUT OVER */}
-            <IconsLayout/>
+            <IconsLayout jsonpas={1}/>
             <View style={styles.spaces} />
             {/* STATUS OVER */}
             <SwiperLayout />
@@ -177,7 +202,7 @@ const styles = StyleSheet.create({
         marginLeft: '-6%',
         backgroundColor: 'white',
         borderRadius: 0,
-        height: '95%',
+        height: '70%',
         width: '113%',
         padding: 35,
         // alignItems: 'center',
@@ -198,9 +223,9 @@ const styles = StyleSheet.create({
     otpinputbox:{
         backgroundColor: '#ffffff',
         borderWidth: 1,
-        width: '85%',
-        height: '15%',
-        marginLeft: 25,
+        width: '97%',
+        height: '13%',
+        marginLeft: 5,
         marginTop: 15,
     },
     otpinput:{
@@ -242,6 +267,10 @@ const styles = StyleSheet.create({
         height: 30,
         marginHorizontal: 10,
         marginTop: 7
+    },
+    googleicon:{
+        height:20,
+        width:20,
     },
     imageSizeicon2:{
         width:40,
