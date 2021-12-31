@@ -23,7 +23,13 @@ import Shoppingcart from './components/Shoppingcart';
 import {Provider as StoreProvider} from 'react-redux';
 import store from './redux/store';
 import NavBar from './Modules/NavBar';
-import whislist from './redux/store';
+
+import Terms from './Screens/terms';
+
+import AntDesign from 'react-native-vector-icons/AntDesign';
+
+
+
 InAppReview.isAvailable();
 InAppReview.RequestInAppReview()
   .then(hasFlowFinishedSuccessfully => {
@@ -49,77 +55,34 @@ const App = () => {
 
   return (
     <StoreProvider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="Landing"
-            component={LandingPage}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="Settings"
-            component={SettingsScreen}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="Main"
-            component={MainScreen}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="Home"
-            component={HomeScreen}
-            options={{headerRight: props => <ShoppingCartIcon {...props} />}}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="Whislist"
-            component={Whislist}
-            options={{headerRight: props => <ShoppingCartIcon {...props} />}}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="SettingsMenu"
-            component={SettingsMenu}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="VoiceMenu"
-            component={VoiceMenu}
-          />
-          {/* <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon {...props} /> }} /> */}
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="CartScreen"
-            component={CartScreen}
-            options={{headerRight: props => <Shoppingcart {...props} />}}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="init"
-            component={initialScreen}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="camera"
-            component={Camera}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="navbar"
-            component={NavBar}
-          />
-          <Stack.Screen
-            options={{headerShown: false}}
-            name="TableScreen"
-            component={TableScreen}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </StoreProvider>
-  );
-};
+
+
+    <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen options={{headerShown: false}} name="Landing" component={LandingPage} />
+      <Stack.Screen options={{headerShown: false}} name="Settings" component={SettingsScreen} />
+      <Stack.Screen options={{headerShown: false}} name="Main" component={MainScreen} />
+      <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} options={{headerTitle:'       SHIRTS',headerRight: props => <ShoppingCartIcon {...props} />}}/>
+      <Stack.Screen options={{headerShown: false}} name="SettingsMenu" component={SettingsMenu}opt/>
+      <Stack.Screen options={{headerShown: false}} name="VoiceMenu" component={VoiceMenu} />
+      {/* <Stack.Screen options={{headerShown: false}} name="BookScreen" component={BookScreen}options={{ headerRight: props => <ShoppingCartIcon {...props} /> }} /> */}
+      <Stack.Screen options={{headerShown: false}} name="CartScreen" component={CartScreen} options={{headerRight: props => <Shoppingcart {...props} />}}/>
+      <Stack.Screen options={{headerShown: false}} name="init" component={initialScreen} />
+      <Stack.Screen options={{headerShown: false}} name="camera" component={Camera} />
+      <Stack.Screen options={{headerShown:false}} name="navbar" component={NavBar} />
+      <Stack.Screen options={{headerShown:false}} name="TableScreen" component={TableScreen} />
+      <Stack.Screen options={{headerShown:false}} name="terms" component={Terms} />
+       <Stack.Screen options={{headerShown: false}} name="Whislist" component={Whislist} options={{headerRight: props => <ShoppingCartIcon {...props} />}}/>
+        
+     
+    </Stack.Navigator>
+  </NavigationContainer>
+  </StoreProvider>
+  
+  )
+}
+
+
 
 export default App;
 

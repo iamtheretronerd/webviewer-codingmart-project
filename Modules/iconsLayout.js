@@ -1,11 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StyleSheet, Text, View,ScrollView,Image, Pressable } from 'react-native'
 import landingCont from '../JSON/StatusContainer/landingcont'
 import { useNavigation } from '@react-navigation/native';
+import landingAlt from '../JSON/StatusContainer/landingalt';
 
 
 const IconsLayout = (props) => {
+
+    let dyndat = landingCont;
+
+    useEffect(() =>{
+        
+        run(props.jsonpas)
+    })
+
     const navigation = useNavigation(); 
+    
+    function run(data){
+        if(data == 1){
+            dyndat = landingCont;
+            // alert('one')
+        }
+        else if(data == 2){
+            dyndat = landingAlt;
+            alert('two')
+        }
+    }
+
     function clickednow(id){
         
         if( id == "1"){
@@ -20,7 +41,7 @@ const IconsLayout = (props) => {
         <View>
                         <View  style={styles.statusContainer}>
                             <ScrollView  horizontal={true}> 
-                            {landingCont.map(datas => (
+                            {dyndat.map(datas => (
                                     <View>
                                         <Pressable onPress={() => clickednow(datas.id)}>
                                              <Image style={styles.imageSizeStatus} source={{uri: datas.url}}  />
