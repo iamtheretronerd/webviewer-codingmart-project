@@ -7,6 +7,7 @@ import {
   Image,
   StyleSheet,
   ScrollView,
+  Alert,
 } from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -14,18 +15,25 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Picker, Item} from '@react-native-picker/picker';
 import {useSelector, useDispatch} from 'react-redux';
 import {REMOVE_FROM_CART} from '../redux/CartItem';
+import {ADD_TO_WHISLIST} from '../redux/CartItem';
 function Separator() {
   return <View style={{marginTop: '2%'}} />;
 }
 function CartScreen() {
-  const cartItems = useSelector(state => state);
+  const cart = useSelector(state => state);
+  // const whislist = useSelector(states => states);
   const dispatch = useDispatch();
+
+  // const dispatch = useDispatch();
+  // const addItemToCart = item => dispatch({type: ADD_TO_CART, payload: item});
 
   const removeItemFromCart = item =>
     dispatch({
       type: REMOVE_FROM_CART,
       payload: item,
     });
+  const addItemToWhislist = item =>
+    dispatch({type: ADD_TO_WHISLIST, payload: item});
   const [selectedValue, setSelectedValue] = useState('S');
   const [selectedqty, setSelectedqty] = useState('1');
   return (
@@ -36,7 +44,9 @@ function CartScreen() {
       {/* HEADER */}
       <View style={styles.header}>
         <Text style={styles.address}>Deliver to Gauri Cha...56011</Text>
-        <Text>H:1245-2325/4, 16th cross.Richmon...</Text>
+        <Text style={{marginLeft: '2%'}}>
+          H:1245-2325/4, 16th cross.Richmon...
+        </Text>
         <TouchableOpacity style={styles.btn}>
           <Text style={{color: 'black'}}>Chang/add</Text>
         </TouchableOpacity>
@@ -53,9 +63,9 @@ function CartScreen() {
         <Text style={{marginLeft: '11%'}}>spend of Rs.3000 TCA</Text>
         <Text style={styles.showmore}>SHOW MORE</Text>
       </View>
-      {cartItems.length !== 0 ? (
+      {cart.length !== 0 ? (
         <FlatList
-          data={cartItems}
+          data={cart}
           keyExtractor={item => item.id.toString()}
           ItemSeparatorComponent={() => Separator()}
           renderItem={({item}) => (
@@ -128,7 +138,9 @@ function CartScreen() {
                   <AntDesign name="delete" size={20} />
                   <Text style={styles.buttonText}>Remove</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button2}>
+                <TouchableOpacity
+                  onPress={() => addItemToWhislist(item)}
+                  style={styles.button2}>
                   <AntDesign name="hearto" size={15} />
                   <Text style={styles.buttonText}>Whislist</Text>
                 </TouchableOpacity>
@@ -138,7 +150,8 @@ function CartScreen() {
         />
       ) : (
         <View style={styles.emptyCartContainer}>
-          <Text style={styles.emptyCartMessage}>Your cart is empty :)</Text>
+          {/* <Text style={styles.emptyCartMessage}>Your cart is empty :)</Text> */}
+          {Alert.alert('Empty Cart')}
         </View>
       )}
     </View>
@@ -217,6 +230,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   address: {
+    marginLeft: '2%',
     fontSize: 17,
     fontWeight: '600',
     color: 'black',
