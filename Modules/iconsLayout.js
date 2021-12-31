@@ -19,7 +19,7 @@ const IconsLayout = (props) => {
     function run(data){
         if(data == 1){
             dyndat = landingCont;
-            alert('one')
+            // alert('one')
         }
         else if(data == 2){
             dyndat = landingAlt;
