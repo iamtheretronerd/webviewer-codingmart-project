@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import {books} from '../Data';
 import {useDispatch} from 'react-redux';
-import {ADD_TO_WHISLIST} from '../redux/CartItem';
+import {ADD_TO_WHISLIST,REMOVE_FROM_WHISLIST} from '../redux/CartItem';
 import {useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 
@@ -23,15 +23,18 @@ const HomeScreen = () => {
     );
   }
   const cartItem = useSelector(state => state);
+  const dispatch = useDispatch();
+  const removeWhislist = item =>
+    dispatch({
+      type: REMOVE_FROM_WHISLIST,
+      payload: item,
+    });
   let newwhislist = cartItem.slice(0);
   newwhislist = newwhislist.filter(wl => wl.whislist === true);
   console.log(newwhislist);
-  //const dispatch = useDispatch();
-  // const addItemToWhislist = item =>
-  //   dispatch({type: ADD_TO_WHISLIST, payload: item});
+
   return (
     <View style={styles.container}>
-      {/* {whislist.length !== 0 ? ( */}
       <FlatList
         data={newwhislist}
         keyExtractor={item => item.id.toString()}
@@ -46,19 +49,16 @@ const HomeScreen = () => {
               <Text style={styles.textAuthor}>by {item.author}</Text>
               <Text style={styles.rate}>${item.rate}</Text>
               <View style={styles.buttonContainer}>
-                {/* <TouchableOpacity
-                  onPress={() => addItemToWhislist(item)}
+                <TouchableOpacity
+                  onPress={() => removeWhislist(item)}
                   style={styles.button}>
-                  <Text style={styles.buttonText}>Add to whislist</Text>
-                </TouchableOpacity> */}
+                  <Text style={styles.buttonText}>Remove</Text>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
         )}
       />
-      {/* ) : (
-        <View>{Alert.alert('Empty Whislist')}</View>
-      )} */}
     </View>
   );
 };
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   textTitle: {
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: '400',
   },
   textAuthor: {
